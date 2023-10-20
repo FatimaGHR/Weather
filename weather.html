@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="asset/css/bootstrap.css">
+    <title>The weather</title>
+    <style>
+
+        body{
+            color: white;
+            background-image: linear-gradient(to right,rgb(101, 101, 227),rgb(108, 234, 236));
+        }
+.box2{
+height: 300px;
+width: 350px;
+background-image: linear-gradient(to right,rgb(100, 222, 227),rgb(108, 163, 236));
+display: inline-block;
+border-radius: 10px;
+}
+
+.box1{
+   position: relative;
+   top: -100px;
+    height: 300px;
+width: 350px;
+background-image: linear-gradient(to right,rgb(101, 181, 227),rgb(108, 163, 236));
+display: inline-block;
+border-radius: 10px;
+}
+.coln{
+    height: 200px;
+    width: 200px;
+    display: inline-block;
+    text-align: center;
+}
+.ms-5{
+margin-left: 200px !important;
+
+}
+.ms-4{
+    margin-left: 142px !important;
+}
+h1{
+    margin-left: 420px;
+    letter-spacing: 2px;
+}
+
+.box1 p{
+    text-align:center;
+    font-size: 20px;
+    font-weight: bold;
+    border-bottom: 1px solid white;
+
+}
+.box1 .img{
+    height: 120px;
+    width: 120px;
+    display: inline-block;;
+}
+.box1 .txt{
+    display: inline-block;
+    margin-left: 80px;
+}
+.img img{
+    height: 150px;
+    width: 150px;
+    margin-top: -150px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 30px rgb(240, 235, 235);
+   
+   
+    
+}
+.txt h4{
+    margin-bottom: 50px;
+}
+.big{
+    height: 220px !important;
+    width: 1050px !important;
+    border-radius: 10px;
+    background-image: linear-gradient(to right,rgb(56, 164, 226),rgb(108, 163, 236));
+}
+    </style>
+</head>
+<body>
+    <h1 class="  mb-3 mt-1">WEATHER TEMPLATE</h1>
+   <div class=" box1  ms-5">
+    
+        <p>LOCAL WEATHER PREPORT</p>
+<div class="img">
+
+</div>
+<div class="txt">
+
+</div>
+      
+      
+   </div> 
+
+<div class=" box2 ms-5 mt-4">
+   
+
+</div>
+
+
+<div class="container-fluid ms-4 rounded-2 big">
+
+    <div class="coln border-end">
+
+    </div>
+<div class="coln border-end">
+
+</div>
+
+<div class="coln border-end">
+
+</div>
+<div class="coln border-end">
+
+</div>
+
+<div class="coln ">
+
+</div>
+
+
+</div>
+<script>
+let obj=[ {day:"SUNDAY",imgg:"asset/Sun.png",c:"22`C",f:"71.6`F"},
+{day:"MONDAY",imgg:"asset/SunCloud.png",c:"22`C",f:"71.6`F"},
+{day:"TUESDAY",imgg:"asset/Cloud.png",c:"22`C",f:"71.6`F"},
+{day:"WEDNESDAY",imgg:"asset/rain.png" ,c:"22`C",f:"71.6`F"},
+{day:"THURSDAY",imgg:"asset/RainThunder.png",c:"22`C",f:"71.6`F"},
+{day:"FRIDAY",imgg:"asset/Snow.png",c:"22`C",f:"71.6`F"}
+]
+
+let im=["asset/Sun.png","asset/SunCloud.png","asset/Cloud.png","asset/rain.png","asset/rain.png","asset/Snow.png"];
+let d=["SUNDAY","MONDAY","TUESDAY", "WEDNESDAY","THURSDAY","FRIDAY"];
+
+let h4 =document.createElement("h4");
+for(let l in d){
+    h4.innerHTML=d[Math.floor(Math.random()*d.length)];
+    }
+    // h4.innerHTML=obj[0].day;
+    let img =document.createElement("img");
+    for(let j in im){
+    img.src=im[Math.floor(Math.random()*im.length)];
+    }
+    // img.src=obj[0].imgg;
+    let h3 =document.createElement("h3");
+    h3.innerHTML=obj[0].c;
+    let h2 =document.createElement("h2");
+    h2.innerHTML=obj[0].f;
+let g=document.getElementsByClassName("img")[0];
+let t=document.getElementsByClassName("txt")[0];
+
+g.appendChild(img);
+t.appendChild(h4);
+t.appendChild(h3);
+t.appendChild(h2);
+
+for (let i=1;i<obj.length;i++){
+    let h4 =document.createElement("h4");
+    h4.innerHTML=obj[i].day;
+    let img =document.createElement("img");
+    img.src=obj[i].imgg;
+    let h3 =document.createElement("h3");
+    h3.innerHTML=obj[i].c;
+    let h2 =document.createElement("h2");
+    h2.innerHTML=obj[i].f;
+
+    let coln=document.getElementsByClassName("coln")[i-1];
+
+    coln.appendChild(h4 );
+    coln.appendChild(img);
+    coln.appendChild(h3);
+    coln.appendChild(h2); 
+
+}
+
+
+
+
+
+</script>
+
+</body>
+</html>
